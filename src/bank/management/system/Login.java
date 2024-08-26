@@ -102,6 +102,7 @@ public class Login extends JFrame implements ActionListener { // extend Jframe t
         }
     }
     public static void main(String[] args) {
+
         new Login();
     }
 }
