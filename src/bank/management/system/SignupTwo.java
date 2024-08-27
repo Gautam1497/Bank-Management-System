@@ -194,20 +194,23 @@ public class SignupTwo extends JFrame implements ActionListener {
                 occupation.setSelectedIndex(-1);
                 citizengroup.clearSelection();
                 existinggroup.clearSelection();
-            } else if (e.getSource() == next) {
+            } if (e.getSource() == next) {
                 if (span.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Pan is required");
-                } else if (saadhar.isEmpty()) {
+                } if (saadhar.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Aadhar is required");
-                } else if (seniorcitegen == null) {
+                } if (seniorcitegen == null) {
                     JOptionPane.showMessageDialog(null, "All fields are required");
-                }else if (existingaccount == null) {
+                } if (existingaccount == null) {
                     JOptionPane.showMessageDialog(null, "All fields are required");
                 } else {
 
                     Conn c = new Conn();
                     String query = "insert into signuptwo values('" + formno + "', '" + sreligion + "', '" + scategory + "', '" + sincome + "', '" + seducation + "', '" + soccupation + "', '" + span + "', '" + saadhar + "', '" + seniorcitegen + "', '" + existingaccount + "')";
                     c.s.executeUpdate(query);
+
+                    setVisible(false);
+                    new SignupThree(formno).setVisible(true);
                 }
             }
         }
