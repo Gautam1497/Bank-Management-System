@@ -1,5 +1,4 @@
 package bank.management.system;
-import com.mysql.cj.protocol.Resultset;
 
 import javax.swing.*;
 import java.awt.*;
