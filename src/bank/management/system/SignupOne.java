@@ -18,7 +18,7 @@ public class SignupOne extends JFrame implements ActionListener {
 
     ButtonGroup gendergroup,maritalgroup;
 
-    JButton next,clear;
+    JButton back,next,clear;
 
     long random;
 
@@ -163,6 +163,13 @@ public class SignupOne extends JFrame implements ActionListener {
         pinTextField.setBounds(300,590,400,30);
         add(pinTextField);
 
+        back=new JButton("Back");
+        back.setBounds(380,660,80,30);
+        back.setBackground(Color.BLACK);
+        back.setForeground(Color.white);
+        back.addActionListener(this);
+        add(back);
+
         clear=new JButton("CLEAR");
         clear.setBounds(500,660,80,30);
         clear.setBackground(Color.BLACK);
@@ -216,6 +223,9 @@ public class SignupOne extends JFrame implements ActionListener {
                 gendergroup.clearSelection();
                 maritalgroup.clearSelection();
                 dateChooser.setDate(null);
+            }else if(e.getSource()==back){
+                setVisible(false);
+                new Login().setVisible(true);
             }
             else if(e.getSource()==next){
                 if (name.isEmpty()) {
